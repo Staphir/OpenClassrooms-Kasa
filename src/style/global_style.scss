@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "sass:color";
+@use "./global_variables" as gv;
+
+main {
+    font-family: gv.$font-family;
+    margin: 7px 20px 7px 20px;
+}

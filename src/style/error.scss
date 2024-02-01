@@ -2,31 +2,28 @@
 @use "sass:color";
 @use "./global_variables" as gv;
 
-header {
-    margin: 20px 20px 27px 20px;
-}
 
-main {
+.error-title, .error-text, .error-link {
     color: map.get(gv.$colors, "main");
-    font-family: gv.$font-family;
     text-align: center;
-    margin: 113px 20px 113px 20px;
 }
 
-main h2 {
+.error-title, .error-text {
+    margin-bottom: 113px;
+}
+
+.error-title {
     font-size: 96px;
-    margin-bottom: 113px;
 }
 
-main p {
+.error-text {
     font-size: 18px;
-    margin-bottom: 113px;
 }
 
-main a {
+.error-link {
     font-size: 14px;
 }
 
-main a:visited {
+.error-link:visited {
     color: map.get(gv.$colors, "main");
 }

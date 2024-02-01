@@ -1,12 +1,15 @@
 import "./style.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import logo from "../../asset/kasa_logo_header.png";
 
-function Header({srcLogo, menuPages}) {
+function Header() {
+    const menuPages = {"Accueil": "", "A propos": "about"};
+
     return (
         <header>
-            <img className="logo" src={srcLogo} alt="logo Kasa"/>
+            <img className="logo" src={logo} alt="logo Kasa"/>
             <nav className="menu">
-                {Object.keys(menuPages).map((page) => <Link key={page} id={page} to={menuPages[page]}>{page.toUpperCase()}</Link>)}
+                {Object.keys(menuPages).map((page) => <NavLink key={page} to={menuPages[page]}>{page.toUpperCase()}</NavLink>)}
             </nav>
         </header>
     )

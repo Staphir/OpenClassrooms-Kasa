@@ -1,10 +1,13 @@
-function Banner({logo}) {
+import { Fragment } from "react";
+import "./style.scss";
+
+function Banner({text, srcImage, altImage}) {
     return (
-        <div className="banner">
-        <img className="logo" src={logo}></img>
-
-        </div>
-    )
-}
-
-export default Banner;
+        <Fragment>
+            <h2 className="banner-text">{text}</h2>
+            <img className='banner-image' src={srcImage} alt={altImage}></img>
+        </Fragment>
+        );
+    }
+    
+    export default Banner;

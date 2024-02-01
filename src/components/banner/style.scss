@@ -1,0 +1,15 @@
+.banner-text {
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    text-align: center;
+    left: 15px;
+    right: 15px;
+    z-index: 1;
+}
+
+.banner-image {
+    object-fit: cover;
+    border-radius: 10px;
+    filter: brightness(70%);
+}

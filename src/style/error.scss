@@ -1,0 +1,32 @@
+@use "sass:map";
+@use "sass:color";
+@use "./global_variables" as gv;
+
+header {
+    margin: 20px 20px 27px 20px;
+}
+
+main {
+    color: map.get(gv.$colors, "main");
+    font-family: gv.$font-family;
+    text-align: center;
+    margin: 113px 20px 113px 20px;
+}
+
+main h2 {
+    font-size: 96px;
+    margin-bottom: 113px;
+}
+
+main p {
+    font-size: 18px;
+    margin-bottom: 113px;
+}
+
+main a {
+    font-size: 14px;
+}
+
+main a:visited {
+    color: map.get(gv.$colors, "main");
+}

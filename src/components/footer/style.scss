@@ -1,0 +1,19 @@
+footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    object-fit: cover;
+    height: 100%;
+    width: 122px;
+    align-self: center;
+}
+
+.siteProperty {
+    align-self: center;
+    color: white;
+    text-align: center;
+}

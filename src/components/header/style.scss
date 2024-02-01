@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "sass:color";
+@use "../../style/global_variables" as gv;
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    object-fit: cover;
+    height: 100%;
+    width: 145px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 26px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: map.get(gv.$colors, "main");
+    font-family: gv.$font-family;
+    font-size: 12px;
+    align-self: center;
+}
+
+.menu a:hover {
+    border-bottom-style: solid;
+    border-bottom-color: map.get(gv.$colors, "main");
+    border-width: 1px;
+}

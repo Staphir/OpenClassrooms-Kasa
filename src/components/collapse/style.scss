@@ -1,0 +1,51 @@
+@use "sass:map";
+@use "sass:color";
+@use "../../style/global_variables" as gv;
+
+.collapse {
+    position: relative;
+}
+
+.top-bar {
+    width: 100%;
+    background-color: map.get(gv.$colors, "main");
+    border-radius: 5px;
+    border-style: none;
+    padding: 10px;
+    font-family: gv.$font-family;
+    font-size: 13px;
+    color: white;
+    text-align: left;
+}
+
+.top-bar .chevron {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 10px; 
+    transition: transform 200ms;
+}
+
+.top-bar .up {
+    transform: rotate(0deg);
+}
+
+.top-bar .down {
+    transform: rotate(-180deg);
+}
+
+.collapse-content {
+    background-color: map.get(gv.$colors, "gray");
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: map.get(gv.$colors, "main");
+    font-family: gv.$font-family;
+    font-size: 12px;
+    line-height: 17px;
+    transition: height 300ms;
+    overflow: hidden;
+}
+
+.collapse-content .collapse-text {
+    margin: 20px;
+}

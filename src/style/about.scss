@@ -1,0 +1,12 @@
+.about-banner img{
+    width: 100%;
+    height: 111px;
+}
+
+.about-collapses {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 20px;
+}

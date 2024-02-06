@@ -1,0 +1,35 @@
+.slideshow {
+    position: relative;
+    height: 255px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+    .slideshow-content {
+        transition-duration: 1000ms;
+        
+        img {
+            object-fit: cover;
+            height: 255px;
+            width: 100%;
+            border-radius: 10px;
+
+        }
+    }
+
+    .controller-arrow {
+        position: absolute;
+        color: white;
+    }
+
+    .left-arrow {
+        left: 5px;
+        top: 105px;
+    }
+
+    .right-arrow {
+        right: 5px;
+        top: 105px;
+    }
+
+}

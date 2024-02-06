@@ -2,8 +2,8 @@ import '../style/home.scss';
 import Card from '../components/card';
 import Banner from '../components/banner';
 import homeBannerImg from '../asset/presentation_image.png';
-import { Fragment } from 'react';
 import logementsDB from "../data/logements.json";
+import { Link } from 'react-router-dom';
 
 
 function Home() {
@@ -11,18 +11,18 @@ function Home() {
   const altBannerImg = "image de paysage";
 
   return (
-    <Fragment>
-        <main>
-          <section className='home-banner'>
-            <Banner text={bannerText} srcImage={homeBannerImg} altImage={altBannerImg}></Banner>
-          </section>
-          <section className='locations'>
-            {logementsDB.map((logement)=>
+      <main>
+        <section className='home-banner'>
+          <Banner text={bannerText} srcImage={homeBannerImg} altImage={altBannerImg}></Banner>
+        </section>
+        <section className='locations'>
+          {logementsDB.map((logement)=>
+          <Link to={"accomodation/" + logement.id}>
             <Card key={logement.id} id={logement.id} src_image={logement.cover} location_title={logement.title}></Card>
-            )}
-          </section>
-        </main>
-    </Fragment>
+          </Link>
+          )}
+        </section>
+      </main>
   );
 }
 

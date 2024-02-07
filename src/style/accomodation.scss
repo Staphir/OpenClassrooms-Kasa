@@ -1,0 +1,88 @@
+@use "sass:map";
+@use "sass:color";
+@use "../style/global_variables" as gv;
+
+.accomodation-main {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 10px;
+
+    .accomodation-title {
+        color: map.get(gv.$colors, "main");
+
+        .name {
+            font-size: 18px;
+            margin: 0px;
+            margin-bottom: 5px;
+            line-height: 28px;
+        }
+
+        .location {
+            font-size: 14px;
+            margin: 0px;
+        }
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+
+    .rate-host {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+        .rate {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            column-gap: 3px;
+
+            .star {
+               width: 18px; 
+               height: 18px;
+            }
+
+            .solid {
+                color: map.get(gv.$colors, "main");
+            }
+
+            .regular {
+                color: map.get(gv.$colors, "black-gray");
+            }
+        }
+
+        .host {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            max-width: 135px;
+            column-gap: 10px;
+
+            h3 {
+                color: map.get(gv.$colors, "main");
+                font-size: 12px;
+            }
+
+            img {
+                object-fit: cover;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}

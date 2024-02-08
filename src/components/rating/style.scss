@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "sass:color";
+@use "../../style/global_variables" as gv;
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    column-gap: 3px;
+
+    .star {
+       width: 18px; 
+       height: 18px;
+    }
+
+    .solid {
+        color: map.get(gv.$colors, "main");
+    }
+
+    .regular {
+        color: map.get(gv.$colors, "black-gray");
+    }
+}

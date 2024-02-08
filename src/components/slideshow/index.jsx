@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./style.scss";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 function Slideshow({pictures}) {
     const [pictureIndex, setPictureIndex] = useState(0);
@@ -21,8 +21,13 @@ function Slideshow({pictures}) {
                     return <img key={index} src={picture} alt={"Logement picture " + index}></img>
                 })}
             </div>
-            {nbPictures > 1 && <FontAwesomeIcon icon={faChevronLeft} size="xl" className="controller-arrow left-arrow" onClick={previousPicture}></FontAwesomeIcon>}
-            {nbPictures > 1 && <FontAwesomeIcon icon={faChevronRight} size="xl" className="controller-arrow right-arrow" onClick={nextPicture}></FontAwesomeIcon>}
+
+            {nbPictures > 1 &&
+            <Fragment>
+                <FontAwesomeIcon icon={faChevronLeft} size="xl" className="controller-arrow left-arrow" onClick={previousPicture}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faChevronRight} size="xl" className="controller-arrow right-arrow" onClick={nextPicture}></FontAwesomeIcon>
+                <p className="picture-index">{pictureIndex+1 + "/" + nbPictures}</p>
+            </Fragment>}
         </div>
     )
 }

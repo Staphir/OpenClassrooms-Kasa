@@ -84,5 +84,10 @@
         justify-content: space-between;
         flex-direction: column;
         row-gap: 20px;
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
     }
 }

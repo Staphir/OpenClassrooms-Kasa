@@ -1,6 +1,6 @@
 import "./style.scss";
 
-function Card({id, src_image, location_title}) {
+function Card({src_image, location_title}) {
     return (
         <article className="card">
             <h3 className="location-title">{location_title}</h3>

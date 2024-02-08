@@ -26,7 +26,7 @@ function Collapse({title, content}) {
                 {title}
                 <FontAwesomeIcon icon={faChevronUp} className={"chevron " + chevronPosition} onClick={toggleDropdown}></FontAwesomeIcon>
             </button>
-            <div ref={ref} className="collapse-content" style={isOpen ? {height : ref.current.scrollHeight + "px"} : {height: "0px"}}><p className="collapse-text">{content}</p></div>
+            <div ref={ref} className="collapse-content" style={isOpen ? {height : ref.current.scrollHeight + "px"} : {height: "0px"}}><div className="collapse-text">{content}</div></div>
         </div>
     );
 }

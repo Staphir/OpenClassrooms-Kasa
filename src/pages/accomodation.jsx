@@ -1,10 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import "../style/accomodation.scss";
 import logementsDB from "../data/logements.json";
 import Slideshow from "../components/slideshow";
 import Tag from "../components/tag";
 import Collapse from "../components/collapse";
 import Rating from "../components/rating";
+import { Fragment } from "react";
 
 function Accomodation() {
     const {logementId} = useParams();
@@ -12,8 +13,16 @@ function Accomodation() {
         return logement.id === logementId;
     })
     
+    if(!logementSelected) {
+        return (
+            <Fragment>
+                <Navigate to={"/error"} replace={true}></Navigate>
+            </Fragment>
+        );
+    }  
+
     const logementEquipements = logementSelected.equipments.map((equipement) => {
-        return <li>{equipement}</li>;
+        return <li key={equipement}>{equipement}</li>;
     });
 
     return (
@@ -32,13 +41,6 @@ function Accomodation() {
             </section>
             <section className="rate-host">
                 <Rating rate={parseInt(logementSelected.rating)} maxRate={5}></Rating>
-                {/* <div className="rate">
-                    <FontAwesomeIcon icon={faStar} className={"star " + (parseInt(logementSelected.rating) >= 1 ? "solid" : "regular")}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faStar} className={"star " + (parseInt(logementSelected.rating) >= 2 ? "solid" : "regular")}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faStar} className={"star " + (parseInt(logementSelected.rating) >= 3 ? "solid" : "regular")}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faStar} className={"star " + (parseInt(logementSelected.rating) >= 4 ? "solid" : "regular")}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faStar} className={"star " + (parseInt(logementSelected.rating) >= 5 ? "solid" : "regular")}></FontAwesomeIcon>
-                </div> */}
                 <div className="host">
                     <h3>{logementSelected.host.name}</h3>
                     <img src={logementSelected.host.picture} alt="Profile de l'hôte"></img>

@@ -18,7 +18,7 @@ function Home() {
         <section className='locations'>
           {logementsDB.map((logement)=>
           <Link key={"link" + logement.id} to={"accomodation/" + logement.id}>
-            <Card key={logement.id} id={logement.id} src_image={logement.cover} location_title={logement.title}></Card>
+            <Card key={logement.id} src_image={logement.cover} location_title={logement.title}></Card>
           </Link>
           )}
         </section>

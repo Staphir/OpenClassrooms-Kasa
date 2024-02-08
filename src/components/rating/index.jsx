@@ -4,8 +4,9 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 function Rating({rate, maxRate}) {
     let rateIcons = [];
+    
     for(let indexRate = 1; indexRate <= maxRate; indexRate++) {
-        rateIcons.push(<FontAwesomeIcon icon={faStar} className={"star " + (rate >= indexRate ? "solid" : "regular")}></FontAwesomeIcon>)
+        rateIcons.push(<FontAwesomeIcon key={"star " + indexRate} icon={faStar} className={"star " + (rate >= indexRate ? "solid" : "regular")}></FontAwesomeIcon>)
     }
 
     return (

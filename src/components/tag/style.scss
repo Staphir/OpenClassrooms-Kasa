@@ -15,4 +15,13 @@
         color: white;
         font-weight: normal;
     }
+
+    @media (min-width: gv.$desktop-width-min) {
+        height: 25px;
+        min-width: 115px;
+
+        .tag-text {
+            font-size: 14px;
+        }
+    }
 }

@@ -8,73 +8,67 @@
     flex-direction: column;
     row-gap: 10px;
 
-    .accomodation-title {
-        color: map.get(gv.$colors, "main");
-
-        .name {
-            font-size: 18px;
-            margin: 0px;
-            margin-bottom: 5px;
-            line-height: 28px;
-        }
-
-        .location {
-            font-size: 14px;
-            margin: 0px;
-        }
-    }
-
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        column-gap: 10px;
-        row-gap: 10px;
-    }
-
-    .rate-host {
+    .accomodation-informations {
         display: flex;
         justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
+        flex-direction: column;
+        row-gap: 15px;
 
-        .rate {
+        .title-tags {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 10px;
+    
+            .accomodation-title {
+                color: map.get(gv.$colors, "main");
+        
+                .name {
+                    font-size: 18px;
+                    margin: 0px;
+                    margin-bottom: 5px;
+                    line-height: 28px;
+                }
+        
+                .location {
+                    font-size: 14px;
+                    margin: 0px;
+                }
+            }
+        
+            .tags {
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 10px;
+                row-gap: 10px;
+            }
+        }
+    
+        .rate-host {
             display: flex;
             justify-content: space-between;
             flex-direction: row;
-            column-gap: 3px;
-
-            .star {
-               width: 18px; 
-               height: 18px;
-            }
-
-            .solid {
-                color: map.get(gv.$colors, "main");
-            }
-
-            .regular {
-                color: map.get(gv.$colors, "black-gray");
-            }
-        }
-
-        .host {
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            max-width: 135px;
-            column-gap: 10px;
-
-            h3 {
-                color: map.get(gv.$colors, "main");
-                font-size: 12px;
-            }
-
-            img {
-                object-fit: cover;
-                border-radius: 50%;
-                width: 32px;
-                height: 32px;
+            align-items: center;
+    
+            .host {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                max-width: 135px;
+                column-gap: 10px;
+    
+                h3 {
+                    color: map.get(gv.$colors, "main");
+                    font-size: 12px;
+                }
+    
+                img {
+                    object-fit: cover;
+                    border-radius: 50%;
+                    width: 32px;
+                    height: 32px;
+                }
             }
         }
     }
@@ -88,6 +82,67 @@
         ul {
             list-style: none;
             padding: 0;
+        }
+    }
+
+    @media (min-width: gv.$desktop-width-min) {
+        row-gap: 25px;
+
+        .accomodation-informations {
+            row-gap: 25px;
+            flex-direction: row;
+    
+            .title-tags {
+                row-gap: 20px;
+                .accomodation-title {
+                    
+                    .name {
+                        font-size: 36px;
+                        margin-bottom: 15px;
+                    }
+
+                    .location {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            .rate-host {
+                flex-direction: column-reverse;
+
+                .rate {
+
+                    .star {
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+
+                .host {
+                    max-width: 270px;
+
+                    h3 {
+                        font-size: 18px;
+                    }
+
+                    img {
+                        width: 64px;
+                        height: 64px;
+                    }
+                }
+            }
+        }
+
+        .details {
+            flex-direction: row;
+            column-gap: 76px;
+
+            .collapse {
+                width: 100%;
+                .top-bar {
+                    font-size: 18px;
+                }
+            }
         }
     }
 }

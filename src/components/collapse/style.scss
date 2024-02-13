@@ -16,22 +16,22 @@
     font-size: 13px;
     color: white;
     text-align: left;
-}
 
-.top-bar .chevron {
-    color: white;
-    position: absolute;
-    right: 10px;
-    top: 10px; 
-    transition: transform 200ms;
-}
-
-.top-bar .up {
-    transform: rotate(0deg);
-}
-
-.top-bar .down {
-    transform: rotate(-180deg);
+    .chevron {
+        color: white;
+        position: absolute;
+        right: 10px;
+        top: 10px; 
+        transition: transform 200ms;
+    }
+    
+    .up {
+        transform: rotate(0deg);
+    }
+    
+    .down {
+        transform: rotate(-180deg);
+    }
 }
 
 .collapse-content {
@@ -44,8 +44,27 @@
     line-height: 17px;
     transition: height 300ms;
     overflow: hidden;
+
+    .collapse-text {
+        margin: 20px;
+    }
 }
 
-.collapse-content .collapse-text {
-    margin: 20px;
+
+
+@media (min-width: gv.$desktop-width-min) {
+
+    .top-bar {
+        font-size: 24px;
+
+        .chevron {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .collapse-content {
+        font-size: 18px;
+        line-height: 27px;
+    }
 }

@@ -1,3 +1,5 @@
+@use "../../style/global_variables" as gv;
+
 .card {
     position: relative;
     width: 100%;
@@ -29,4 +31,10 @@
     border-radius: 10px;
     background: linear-gradient(#0000, #000C);
     z-index: 1;
+}
+
+@media (min-width: gv.$desktop-width-min) {
+    .card {
+        width: 340px;
+    }
 }

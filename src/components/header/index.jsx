@@ -7,7 +7,7 @@ function Header() {
 
     return (
         <header>
-            <img className="logo" src={logo} alt="logo Kasa"/>
+            <img className="logo-header" src={logo} alt="logo Kasa"/>
             <nav className="menu">
                 {Object.keys(menuPages).map((page) => <NavLink key={page} to={menuPages[page]}>{page.toUpperCase()}</NavLink>)}
             </nav>

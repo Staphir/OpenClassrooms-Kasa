@@ -9,7 +9,7 @@ header {
     margin: 20px 20px 27px 20px;
 }
 
-.logo {
+.logo-header {
     object-fit: cover;
     height: 100%;
     width: 145px;
@@ -19,22 +19,42 @@ header {
     display: flex;
     justify-content: space-between;
     column-gap: 26px;
-}
 
-.menu a {
-    text-decoration: none;
-    color: map.get(gv.$colors, "main");
-    font-family: gv.$font-family;
-    font-size: 12px;
-    align-self: center;
-}
+    a {
+        text-decoration: none;
+        color: map.get(gv.$colors, "main");
+        font-family: gv.$font-family;
+        font-size: 12px;
+        align-self: center;
+    }
 
-.menu a:hover {
-    border-bottom-style: solid;
-    border-bottom-color: map.get(gv.$colors, "main");
-    border-width: 1px;
+    a:hover {
+        border-bottom-style: solid;
+        border-bottom-color: map.get(gv.$colors, "main");
+        border-width: 1px;
+    }
+
 }
 
 nav .active {
     text-decoration: underline;
+}
+
+@media (min-width: gv.$desktop-width-min) {
+
+    header {
+        margin: 45px 100px 50px 100px;
+    }
+
+    .logo-header {
+        width: 210px;
+    }
+
+    .menu {
+        column-gap: 57px;
+
+        a {
+            font-size: 24px;
+        }
+    }
 }

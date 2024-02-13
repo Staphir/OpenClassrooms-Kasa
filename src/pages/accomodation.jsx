@@ -30,21 +30,25 @@ function Accomodation() {
             <section>
                 <Slideshow pictures={logementSelected.pictures}></Slideshow>
             </section>
-            <section className="accomodation-title">
-                <h1 className="name">{logementSelected.title}</h1>
-                <h2 className="location">{logementSelected.location}</h2>
-            </section>
-            <section className="tags">
-                {logementSelected.tags.map((tag) => {
-                    return <Tag key={tag} text={tag}></Tag>
-                })}
-            </section>
-            <section className="rate-host">
-                <Rating rate={parseInt(logementSelected.rating)} maxRate={5}></Rating>
-                <div className="host">
-                    <h3>{logementSelected.host.name}</h3>
-                    <img src={logementSelected.host.picture} alt="Profile de l'hôte"></img>
+            <section className="accomodation-informations">
+                <div className="title-tags">
+                    <section className="accomodation-title">
+                        <h1 className="name">{logementSelected.title}</h1>
+                        <h2 className="location">{logementSelected.location}</h2>
+                    </section>
+                    <section className="tags">
+                        {logementSelected.tags.map((tag) => {
+                            return <Tag key={tag} text={tag}></Tag>
+                        })}
+                    </section>
                 </div>
+                <section className="rate-host">
+                    <Rating rate={parseInt(logementSelected.rating)} maxRate={5}></Rating>
+                    <div className="host">
+                        <h3>{logementSelected.host.name}</h3>
+                        <img src={logementSelected.host.picture} alt="Profile de l'hôte"></img>
+                    </div>
+                </section>
             </section>
             <section className="details">
                 <Collapse title="Description" content={logementSelected.description}></Collapse>

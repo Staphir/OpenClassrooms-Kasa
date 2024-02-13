@@ -9,8 +9,8 @@
     column-gap: 3px;
 
     .star {
-       width: 18px; 
-       height: 18px;
+       width: 13px; 
+       height: 13px;
     }
 
     .solid {
@@ -19,5 +19,14 @@
 
     .regular {
         color: map.get(gv.$colors, "black-gray");
+    }
+
+    @media (min-width: gv.$desktop-width-min) {
+        column-gap: 10px;
+
+        .star {
+            width: 24px;
+            height: 24px;
+        }
     }
 }

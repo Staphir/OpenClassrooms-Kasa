@@ -2,14 +2,18 @@
 @use "sass:color";
 @use "./global_variables" as gv;
 
+.error-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 113px;
+    margin: 113px 57px 113px 57px;
+}
 
 .error-title, .error-text, .error-link {
     color: map.get(gv.$colors, "main");
     text-align: center;
-}
-
-.error-title, .error-text {
-    margin-bottom: 113px;
+    margin: 0px;
 }
 
 .error-title {
@@ -22,8 +26,28 @@
 
 .error-link {
     font-size: 14px;
+
+    &:visited {
+        color: map.get(gv.$colors, "main");
+    }
 }
 
-.error-link:visited {
-    color: map.get(gv.$colors, "main");
+@media (min-width: gv.$desktop-width-min) {
+
+    .error-main {
+        row-gap: 139px;
+        margin: 139px 280px 139px 280px;
+    }
+
+    .error-title {
+        font-size: 288px;
+    }
+
+    .error-text {
+        font-size: 36px;
+    }
+
+    .error-link {
+        font-size: 18px;
+    }
 }

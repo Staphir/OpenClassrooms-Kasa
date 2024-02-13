@@ -1,12 +1,16 @@
+@use "sass:map";
+@use "sass:color";
+@use "../style/global_variables" as gv;
+
 .home-banner {
     position: relative;
     display: flex;
     align-items: center;
-}
-
-.home-banner img{
-    width: 100%;
-    height: 111px;
+    
+    img{
+        width: 100%;
+        height: 111px;
+    }
 }
 
 .locations {
@@ -15,4 +19,22 @@
     flex-direction: column;
     justify-content: space-between;
     row-gap: 20px;
+}
+
+@media (min-width: gv.$desktop-width-min) {
+
+    .home-banner img {
+        height: 223px;
+    }
+
+    .locations {
+        margin-top: 40px;
+        padding: 50px;
+        background-color: map.get(gv.$colors, "gray");
+        border-radius: 25px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        column-gap: 50px;
+        row-gap: 50px;
+    }
 }

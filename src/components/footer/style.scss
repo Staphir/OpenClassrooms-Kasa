@@ -1,13 +1,16 @@
+@use "../../style/global_variables" as gv;
+
 footer {
     background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 66px 127px 66px 127px;
+    row-gap: 10px;
+    padding: 66px 130px 46px 130px;
     margin-top: 20px;
 }
 
-.logo {
+.logo-footer {
     object-fit: cover;
     height: 100%;
     width: 122px;
@@ -18,4 +21,18 @@ footer {
     align-self: center;
     color: white;
     text-align: center;
+    font-size: 12px;
+}
+
+@media (min-width: gv.$desktop-width-min) {
+
+    footer {
+        row-gap: 10px;
+        padding: 66px 483px 29px 483px;
+        margin-top: 20px;
+    }
+
+    .siteProperty {
+        font-size: 24px;
+    }
 }

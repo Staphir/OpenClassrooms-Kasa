@@ -8,7 +8,7 @@ import { useRef } from "react";
 function Collapse({title, content}) {
     const [isOpen, setIsOpen] = useState(false);
     const [chevronPosition, setChevronPosition] = useState("up")
-    const ref = useRef();
+    const collapseContentRef = useRef();
         
     const toggleDropdown = () => {
         if(isOpen) {
@@ -26,7 +26,7 @@ function Collapse({title, content}) {
                 {title}
                 <FontAwesomeIcon icon={faChevronUp} className={"chevron " + chevronPosition} onClick={toggleDropdown}></FontAwesomeIcon>
             </button>
-            <div ref={ref} className="collapse-content" style={isOpen ? {height : ref.current.scrollHeight + "px"} : {height: "0px"}}><div className="collapse-text">{content}</div></div>
+            <div ref={collapseContentRef} className="collapse-content" style={isOpen ? {height : collapseContentRef.current.scrollHeight + "px"} : {height: "0px"}}><div className="collapse-text">{content}</div></div>
         </div>
     );
 }

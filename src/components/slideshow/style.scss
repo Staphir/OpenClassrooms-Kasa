@@ -34,11 +34,7 @@
     }
 
     .picture-index {
-        color: white;
-        font-size: 14px;
-        position: absolute;
-        left: 50%;
-        bottom: 0px;
+        display: none;
     }
 
     @media (min-width: gv.$desktop-width-min) {
@@ -55,7 +51,12 @@
         }
 
         .picture-index {
+            display: block;
+            color: white;
             font-size: 18px;
+            position: absolute;
+            left: 50%;
+            bottom: 0px;
         }
     }
 }
